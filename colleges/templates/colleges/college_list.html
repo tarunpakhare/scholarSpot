@@ -1,0 +1,159 @@
+{% extends 'colleges/home.html' %}
+
+{% block content %}
+    {% if not colleges_copy %}
+        <p>No colleges found.</p>
+    {% else %}
+	    <h3>Suitable Scholarships for you are: </h3>
+		<br>
+        <div class="row row-flex" style="background-color: #1A5F7A;">
+            {% for college in colleges_copy %}
+                <div class="content col-sm-12 col-md-12 col-lg-6">
+                    <div class="card mx-5 my-5">
+                        <div class="card-body">
+                            <h5 class="card-title">{{college.name}}</h5>
+                            <br>
+                            <h6 class="card-subtitle mb-2 text-muted">Location:{{college.location}}</h6>
+                            <p class="card-text">Family Income: {{college.average_cost}} lakhs</p>
+                            <br>
+                            <a target="blank" href="{{college.website}}" class="card-link">Website</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+	<!--<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5" >
+			  <div class="card-body">
+				<h5 class="card-title">Boren Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:8 lakhs</p>
+				<br>
+				<a target="blank" href="https://www.borenawards.org/apply-now" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">Full Bright Programme</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA{{ college.location }}</h6>				    
+				<p class="card-text">Family Income:10 lakhs</p>
+				<br>
+				<a target="blank" href="https://foreign.fulbrightonline.org/apply" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">Golden Key Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:UK</h6>				    
+				<p class="card-text">Family Income:4 lakhs</p>
+				<br>
+				<a target="blank" href="https://goldenkey.org/scholarships/" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">GATES Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location: UK</h6>				    
+				<p class="card-text">Family Income:8 lakhs</p>
+				<br>
+				<a target="blank" href="https://www.thegatesscholarship.org/scholarship" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">INLAKS SHIVDASANI foundation</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:7 lakhs </p>
+				<br>
+				<a target="blank" href="https://www.inlaksfoundation.org/scholarships/" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">ISES 3M Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:9 lakhs </p>
+				<br>
+				<a target="blank" href="https://www.aises.org/scholarships/-3m-scholarship-2022-2023" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">NAROTM SEKHSARIA Foundation</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:7 lakhs </p>
+				<br>
+				<a target="blank" href="https://pg.nsfoundation.co.in/" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">Prodigy Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:8 lakhs </p>
+				<br>
+				<a target="blank" href="https://prodigyfinance.com/?gclid=CjwKCAjwrpOiBhBVEiwA_473dIt5QJDjD5vfygDd9lopHqJFbqDlZdSSzAO3EQiu3LiFauDxBq-nfxoC3C4QAvD_BwE" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">QS WM Academy Excellence Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:12 lakhs </p>
+				<br>
+				<a target="blank" href="https://qs.topuniversities.com/scholarships/apply/10" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">Richmond Scholars Program</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:10 lakhs </p>
+				<br>
+				<a target="blank" href="https://scholars.richmond.edu/" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	<div class="content col-sm-12 col-md-12 col-lg-6">
+		<div class="card mx-5 my-5">
+			  <div class="card-body">
+				<h5 class="card-title">Sony Mehta Indian Scholarship</h5>
+				<br>
+				<h6 class="card-subtitle mb-2 text-muted">Location:USA</h6>				    
+				<p class="card-text">Family Income:9 lakhs </p>
+				<br>
+				<a target="blank" href="https://www.buddy4study.com/scholarship/the-sonny-mehta-india-scholarship" class="card-link">Website</a>
+			  </div>
+		</div>
+	</div>
+	-->											
